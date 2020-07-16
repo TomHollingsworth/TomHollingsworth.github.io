@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 id="doeSupported"></h1>
+        <script>
+            
+            function deviceOrientationHandler(event) {
+                document.getElementById('doeSupported').innerHTML = event.alpha;
+            }
+
+
+            if (window.DeviceOrientationEvent) {
+                window.addEventListener('deviceorientation', function(event) {
+                    document.getElementById('doeSupported').innerHTML = "EVENT!"
+                    //document.getElementById('doeSupported').innerHTML = event.alpha + ' : ' + event.beta + ' : ' + event.gamma;
+                });
+                //document.getElementById('doeSupported').innerHTML = "SUPPORTED!";
+            } else {
+                document.getElementById('doeSupported').innerHTML = "UNSUPPORTED!";
+            }
+        </script>
+    </body>
+</html>
